@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'vite-plus/test';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { loadFixture } from './utils/fixture-loader';
