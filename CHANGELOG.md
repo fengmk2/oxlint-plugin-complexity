@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-02-25
+
+### Changed
+
+- Bump oxc-parser from 0.114.0 to 0.115.0
+- Bump @oxlint/plugins from 1.48.0 to 1.50.0
+- Bump oxlint from 1.48.0 to 1.50.0
+
 ## [2.0.0] - 2026-02-17
 
 ### Changed
@@ -119,7 +127,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions CI pipeline
 - Pre-commit hooks with Husky
 
-[Unreleased]: https://github.com/itaymendel/oxlint-plugin-complexity/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/itaymendel/oxlint-plugin-complexity/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/itaymendel/oxlint-plugin-complexity/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/itaymendel/oxlint-plugin-complexity/compare/v1.0.0...v2.0.0
 [1.0.0-rc.1]: https://github.com/itaymendel/oxlint-plugin-complexity/compare/v0.3.2...v1.0.0-rc.1
 [0.3.2]: https://github.com/itaymendel/oxlint-plugin-complexity/compare/v0.3.1...v0.3.2
