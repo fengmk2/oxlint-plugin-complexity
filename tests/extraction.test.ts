@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vite-plus/test';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import {

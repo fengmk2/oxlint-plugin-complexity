@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'vite-plus/test';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { loadFixturesFromDir, getParseFilename } from './utils/fixture-loader';
@@ -70,8 +70,8 @@ describe('Combined Visitor (complexity/complexity rule)', () => {
       const combined = calculateCombinedComplexity(fixture.code, parseFilename);
 
       // Check all functions exist in both results
-      expect(Array.from(combined.cyclomatic.keys()).sort()).toEqual(
-        Array.from(standalone.keys()).sort()
+      expect(Array.from(combined.cyclomatic.keys()).toSorted()).toEqual(
+        Array.from(standalone.keys()).toSorted()
       );
 
       // Check all complexity values match
@@ -86,8 +86,8 @@ describe('Combined Visitor (complexity/complexity rule)', () => {
       const combined = calculateCombinedComplexity(fixture.code, parseFilename);
 
       // Check all functions exist in both results
-      expect(Array.from(combined.cognitive.keys()).sort()).toEqual(
-        Array.from(standalone.keys()).sort()
+      expect(Array.from(combined.cognitive.keys()).toSorted()).toEqual(
+        Array.from(standalone.keys()).toSorted()
       );
 
       // Check all complexity values match

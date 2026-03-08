@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'vite-plus/test';
 import { parseSync } from 'oxc-parser';
 import {
   createCombinedComplexityVisitor,
@@ -193,7 +193,7 @@ describe('minLines configuration', () => {
         );
         walkWithVisitor(ast, listener, allCode);
 
-        expect(analyzedFunctions.sort()).toEqual(expectedFunctionsAnalyzed.sort());
+        expect(analyzedFunctions.toSorted()).toEqual(expectedFunctionsAnalyzed.toSorted());
       }
     );
   });

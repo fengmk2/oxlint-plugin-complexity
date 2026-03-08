@@ -2,7 +2,7 @@
 // A complex function that has clear extraction opportunities
 function processOrder(order, config) {
   let totalCount = 0;
-  let processedItems = [];
+  const processedItems = [];
 
   // Block 1: Extractable - validate and transform items (lines 9-20)
   // Inputs: order, config | Outputs: processedItems

@@ -55,8 +55,8 @@ export function calculateCognitiveWithTracking(
 
 export function buildCandidateFromResult(result: ExtendedResult): ExtractionCandidate {
   return {
-    startLine: result.node.loc!.start.line,
-    endLine: result.node.loc!.end.line,
+    startLine: result.node.loc.start.line,
+    endLine: result.node.loc.end.line,
     complexity: result.total,
     complexityPercentage: 50,
     points: result.points,
@@ -75,8 +75,8 @@ export function buildCandidateForRange(
   startOffset: number,
   endOffset: number
 ): ExtractionCandidate {
-  const funcStart = result.node.loc!.start.line;
-  const funcEnd = result.node.loc!.end.line;
+  const funcStart = result.node.loc.start.line;
+  const funcEnd = result.node.loc.end.line;
 
   return {
     startLine: funcStart + startOffset,

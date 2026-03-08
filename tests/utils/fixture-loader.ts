@@ -79,5 +79,5 @@ export function loadFixturesFromDir(dirPath: string, fixturesRoot: string = dirP
   return entries
     .filter((entry) => entry.isFile() && FILE_TYPES.some((type) => entry.name.endsWith(`.${type}`)))
     .map((entry) => loadFixture(join(entry.parentPath, entry.name), fixturesRoot))
-    .sort((a, b) => a.relativePath.localeCompare(b.relativePath));
+    .toSorted((a, b) => a.relativePath.localeCompare(b.relativePath));
 }

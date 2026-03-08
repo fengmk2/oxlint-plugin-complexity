@@ -6,7 +6,7 @@ interface Item {
   label?: string;
 }
 
-let items: Item[] = [];
+const items: Item[] = [];
 
 function formatValue(item: Item): string {
   if (!item.label) {

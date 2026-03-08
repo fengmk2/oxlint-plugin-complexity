@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'vite-plus/test';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { loadFixture } from './utils/fixture-loader';
@@ -21,7 +21,7 @@ describe('formatBreakdown', () => {
 
     it('shows lines in ascending order', () => {
       const lineNumbers = [...breakdown.matchAll(/Line (\d+):/g)].map((m) => parseInt(m[1], 10));
-      const sorted = [...lineNumbers].sort((a, b) => a - b);
+      const sorted = [...lineNumbers].toSorted((a, b) => a - b);
       expect(lineNumbers).toEqual(sorted);
     });
 
