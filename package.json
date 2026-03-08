@@ -3,62 +3,62 @@
   "version": "2.0.2",
   "description": "Cyclomatic and cognitive complexity rules for oxlint",
   "keywords": [
-    "oxlint",
-    "oxc",
-    "eslint",
-    "plugin",
+    "code-quality",
+    "cognitive",
     "complexity",
     "cyclomatic",
-    "cognitive",
-    "code-quality"
+    "eslint",
+    "oxc",
+    "oxlint",
+    "plugin"
   ],
-  "author": "itaymendel",
+  "homepage": "https://github.com/itaymendel/oxlint-plugin-complexity#readme",
+  "bugs": {
+    "url": "https://github.com/itaymendel/oxlint-plugin-complexity/issues"
+  },
   "license": "MIT",
+  "author": "itaymendel",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/itaymendel/oxlint-plugin-complexity.git"
   },
-  "bugs": {
-    "url": "https://github.com/itaymendel/oxlint-plugin-complexity/issues"
-  },
-  "homepage": "https://github.com/itaymendel/oxlint-plugin-complexity#readme",
-  "type": "module",
-  "imports": {
-    "#src/*": "./src/*"
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "files": [
     "dist"
   ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "imports": {
+    "#src/*": "./src/*"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "lint": "pnpm run build && oxlint src/",
+    "test": "vp test",
+    "test:run": "vp test run",
+    "lint": "pnpm run build && vp lint src/",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepublishOnly": "pnpm run build",
     "prepare": "husky"
   },
   "devDependencies": {
+    "@oxlint/plugins": "^1.48.0",
     "@types/node": "^22.19.5",
     "estree-walker": "^3.0.3",
     "husky": "^9.1.7",
     "oxc-parser": "^0.116.0",
-    "@oxlint/plugins": "^1.48.0",
-    "oxlint": "^1.48.0",
     "prettier": "3.8.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.17"
+    "vite-plus": "latest",
+    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
   },
   "peerDependencies": {
     "@oxlint/plugins": ">=1.43.0"
@@ -66,5 +66,11 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "packageManager": "pnpm@10.26.2"
+  "packageManager": "pnpm@10.26.2",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+      "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    }
+  }
 }

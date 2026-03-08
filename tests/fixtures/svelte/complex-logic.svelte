@@ -9,7 +9,7 @@ interface Task {
   subtasks?: Task[];
 }
 
-let tasks: Task[] = [];
+const tasks: Task[] = [];
 
 function processData(task: Task): string {
   if (task.status === 'error') {

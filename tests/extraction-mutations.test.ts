@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'vite-plus/test';
 import type { ExtractionCandidate } from '#src/extraction/types.js';
 import { analyzeVariableFlow } from '#src/extraction/flow-analyzer.js';
 import { extractConstructFromMessage } from '#src/utils.js';
@@ -26,8 +26,8 @@ describe('Smart Extraction Detection', () => {
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
       // Build a candidate for the loop+mutation block (lines inside the function body)
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2, // skip param declaration line
         endLine: funcEnd - 1, // before closing brace
@@ -62,8 +62,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2,
         endLine: funcEnd - 1,
@@ -98,8 +98,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2,
         endLine: funcEnd - 1,
@@ -134,8 +134,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2,
         endLine: funcEnd - 1,
@@ -171,8 +171,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       // Candidate includes the `const result = {}` declaration (line after function header)
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 1,
@@ -210,8 +210,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2,
         endLine: funcEnd - 1,
@@ -246,8 +246,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2,
         endLine: funcEnd - 1,
@@ -282,8 +282,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2,
         endLine: funcEnd - 1,
@@ -318,8 +318,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2,
         endLine: funcEnd - 1,
@@ -354,8 +354,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2,
         endLine: funcEnd - 1,
@@ -391,8 +391,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 1,
         endLine: funcEnd - 1,
@@ -427,8 +427,8 @@ describe('Smart Extraction Detection', () => {
 
       const results = calculateCognitiveWithTracking(code, 'test.js');
       const result = results.get('outer')!;
-      const funcStart = result.node.loc!.start.line;
-      const funcEnd = result.node.loc!.end.line;
+      const funcStart = result.node.loc.start.line;
+      const funcEnd = result.node.loc.end.line;
       const candidate: ExtractionCandidate = {
         startLine: funcStart + 2,
         endLine: funcEnd - 1,

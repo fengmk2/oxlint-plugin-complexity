@@ -1,4 +1,5 @@
 pnpm format:check
 pnpm exec tsc --noEmit
-pnpm exec vp lint src/
+pnpm exec oxlint src/
 pnpm test:run
+vp staged
